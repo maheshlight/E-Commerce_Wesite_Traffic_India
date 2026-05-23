@@ -13,18 +13,13 @@ st.markdown("**Team 1 Data Science Project** | Analyze website traffic to identi
 # ─────────────────────────────────────────────
 # FILE UPLOAD
 # ─────────────────────────────────────────────
-uploaded_file = st.sidebar.file_uploader("📂 Upload Dataset (.xlsx)", type=["xlsx"])
-
-if uploaded_file is None:
-    st.info("👈 Please upload your dataset file from the sidebar to get started.")
-    st.stop()
-
+df = pd.read_excel("Ecommerce_Website_Traffic_India_more_data (1).xlsx")
 # ─────────────────────────────────────────────
 # LOAD & CLEAN DATA
 # ─────────────────────────────────────────────
 @st.cache_data
-def load_and_clean(file):
-    df = pd.read_excel(file)
+def load_and_clean():
+    df = pd.read_excel("Ecommerce_Website_Traffic_India_more_data (1).xlsx")
 
     # Standardize column names
     df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
