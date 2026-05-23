@@ -88,7 +88,7 @@ def load_and_clean():
 
     return df
 
-df = load_and_clean(uploaded_file)
+df = load_and_clean()
 
 st.sidebar.success(f"✅ Dataset loaded: {df.shape[0]} rows, {df.shape[1]} columns")
 
